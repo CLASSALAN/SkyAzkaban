@@ -1,0 +1,13 @@
+nodes:
+  - name: price_hdfs_to_ods
+    type: command
+    config:
+      command: sh price_hdfs_to_ods.sh
+
+  - name: price_ods_to_dwd
+    type: command
+    dependsOn:
+      - price_hdfs_to_ods
+    config:
+      command: sh price_ods_to_dwd.sh
+
